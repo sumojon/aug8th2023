@@ -1,0 +1,529 @@
+Terraform Practise :
+
+Tarraform installation :
+
+https://developer.hashicorp.com/terraform/downloads
+
+
+
+Access id: AKIAXKKGBFIHCTZY676O
+
+secret key: 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
+
+Access key ID	Secret access key
+AKIAXKKGBFIHCTZY676O	xZCEWL1Z1AQr6IdQtwtSMHGmh3L+g9Vjbn14dP9W
+
+
+
+provider "aws" {
+region = var.region
+##shared_credentials_files = [ "C:\\Users\\LENOVO\\.vpcCreate\\cred"]
+access_key = "AKIAXKKGBFIHCTZY676O"                    
+secret_key = "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"
+}
+
+
+from command prompt : aws --version
+
+>aws configure 
+
+here  we need to give the key details .
+
+then next 
+
+> aws ec2 list-instances 
+>aws iam list-users
+
+
+
+
+D:\>aws sts get-caller-identity
+{
+    "UserId": "AIDAXKKGBFIHMNLWCC5KR",
+    "Account": "503194921486",
+    "Arn": "arn:aws:iam::503194921486:user/manu"
+}
+
+
+D:\>aws sts get-caller-identity --debug
+
+9849687136
+
+
+AKIAXKKGBFIHB66CXRC7
+
+5EtsQhW6BZFJ3/Dy/KY93YgiOo21OFekZLMYvaho
+
+
+https://www.youtube.com/watch?v=OHuJkyRGPBc&t=826s
+
+
+#!/bin/bash
+    yum update -y
+amazon-linux-extras install nginx1.12 -y
+service nginx start
+echo "<div><h1>PUBLIC-SERVER</h1></div>" >> /usr/share/nginx/html/index.html
+echo "<div><h1>DEV-OPS 2023</h1></div>" >> /usr/share/nginx/html/index.html
+EOF
+
+
+root@umaster:~# cd /etc/apt/sources.list.d
+root@umaster:/etc/apt/sources.list.d# ls
+jenkins.list  kubernetes.list
+root@umaster:/etc/apt/sources.list.d#
+root@umaster:/etc/apt/sources.list.d# rm -rf jenkins.list
+root@umaster:/etc/apt/sources.list.d# ls
+kubernetes.list
+root@umaster:/etc/apt/sources.list.d# cd
+
+How to uninstall jenkins--
+ apt remove jenkins -y
+
+
+key - not found 
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5BA31D57EF5975CA
+
+
+GITHUB link :
+https://github.com/DeekshithSN/Devops_interview_questions
+
+https://www.youtube.com/watch?v=OHuJkyRGPBc&t=826s
+
+
+Jenkins installation process:
+******************************
+
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+
+
+
+
+
+java installation .
+
+sudo apt install openjdk-11-jre
+
+java -version
+
+
+**************************************************************
+
+Maven ommands :
+
+To specify sonar custom settings
+mvn clean sonar:sonar -Dsonar.host.url=http://192.168.56.101:9000 -Dsonar.login=admin -Dsonar.password=admin
+
+To get dependency tree of your project
+mvn dependency:tree
+
+To get all plugins used of your project
+mvn  -B dependency:resolve-plugins
+
+To get latest version of plugin
+mvn versions:display-plugin-updates
+
+Assume you need to use different local repository
+mvn install -Dmaven.repo.local=/alternate/repo/location
+
+If you want to skip test cases
+mvn clean install -Dmaven.test.skip=true –U
+
+------------------------------------------------------------------------------------------
+
+GIT commands:
+
+git clone < https_clone_link or ssh_clone_link >
+By using above command we clone a specific repository ( all the branches and commits will clone )
+
+git branch 
+This command shows list of local branches and the current branch will be suffixed with *
+
+git branch -a
+List all local and remote branches
+
+git clone -b branch_name --single-branch < https_clone_link or ssh_clone_link >
+Above command clones the repo, with only specified branch ( all commits )
+
+git clone --depth 1 -b branch_name --single-branch < https_clone_link or ssh_clone_link >
+Above command clones the repo, with only specified branch with the latest commit only, which reduces .git folder size
+
+git branch < branch_name >  
+This command used to create new branch, once its created you need to use git checkout < branch_name > change the branch
+
+git checkout < branch_name >
+used to point to another branch or change from one branch to another.
+
+git checkout -b < branch_name >
+This creates a new branch and will be pointed newly created branch
+
+git branch -d < branch_name >
+above command is used to delete local branch in git repo
+
+git push origin --delete < branch_name >
+to delete remote branch we will use above command
+
+git branch -m < old_name > < new_branch_name >
+above command used to modify branch name
+
+git remote -v
+the above command gets us fetch and push repo details.
+
+git add < . or * or filename >
+these are for adding all the files from work area to staging area
+
+How to remove running container :
+docker conatiner rm -f  conainer-id
+
+from conatiner we can exit by using cntr+pq
+
+
+
+GITHUD TOken --- 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
+
+SRE............ questions & Answers:
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+docker ps -a
+  171  docker images
+  172  docker images
+  173  docker run --name mynginx -d -p 80:80 nginx
+  174  docker ps -a
+  175  netstat -an | grep 80
+  
+  http://192.168.56.6:8080/
+  
+   git status
+  234  git add ec2
+  235  git status
+  236  ls
+  237  cd ec2
+  238  ls
+  239  touch file{1..5}
+  240  ls
+  241  cd ..
+  242  git status
+  243  git add ec2/
+  244  ls
+  245  git status
+  246  git commit -m " files added"
+  247  git remote add orgin https://github.com/sumojon/aug2023.git
+  248*
+  249  git remote remove origin
+  250  git remote add origin https://github.com/sumojon/aug2023.git
+  251  git remote add origin https://github.com/sumojon/aug2023.git
+  252  git push origin master
+  
+   git remote add origin git@github.com:sumojon/terraform-.git
+  186  git push origin master
+  187  git pull origin master
+  188  ls
+  189  git push origin master
+  190  git pull origin master
+  193  git pull origin master --allow-unrelated-histories
+  194  git fetch origin master
+  195  git pull origin master --allow-unrelated-histories
+  196  git push origin master
+
+
+ cd /boot/grub/
+  240  cd /
+  241  ls -l
+  242  ls
+  243  clear
+  244  ls
+  245  ls -l
+  246  cd /etc
+  247  ls -l
+  248  clear
+  249  ls
+  250  cd
+  251  ls /etc
+  252  cd
+  253  clear
+  254  ls /bin/sbin
+  255  ls /bin/ sbin
+  256  clear
+  257  ls /bin /sbin
+  258  clear
+  259  ls ~
+  260  ls -a
+  261  ls -al
+  262  clear
+  263  ls -ah
+  264  ls -lh /boot
+  265  ls -l /boot
+  266  clear
+  267  mkdir testdir
+  268  cd ~
+  269  mkdir ~/testdir
+  270  mkdir ~/testdir2
+  276  cd myproject
+  277  mkdir ~project
+  282  mkdir ~/project2
+  283  cd /etc ; ~/newdir
+  288  cd /etc ; mkdir ~/newdir
+  289  ls
+  292  mkdir -p dir1/dir2/dir3
+  293  
+  
+  
+   351  git commit -m "latest commit"
+  352  git remote add origin git@github.com:sumojon/terraform-.git
+  353  git push origin master
+  354  git fetch origin master
+  355  git pull origin master
+  356  git pull origin master --allow-unrelated-histories
+  357  ls
+  358  git pull origin master
+  359  git push origin master
+  
+  docker pull dasivardhani/jenkins:latest
+  
+   docker images -a
+   81  docker build -t dasivardhani/myimage:B1 .
+   82  docker run it dasivardhani/myimage:B1
+   83*
+   84  docker push  dasivardhani/myimage:B1
+   85  docker ps
+   86  clear
+   87  docker ps -a
+   88  docker start d8f814ed5878 8e6e31fbf36b
+   89  docker exec -it 8e6e31fbf36b
+   90  ps -a
+   91  docker ps -a
+   92  docker exec -it 8e6e31fbf36b /bin/bash
+   93  docker start d8f814ed5878
+   94  docker ps -a
+   95  docker run --name myapache -d -p 8081:http
+   96  docker run --name myapache -d -p 8081:httpd
+   97  docker run --name myjenkins -d -p 8080:80 jenkins/jenkins
+   98  docker images
+   99  docker ps -a
+  100  docker exec -it 649b20f08bfc /bin/bash
+  101  docker run --name myapache -d -p 8081:80 httpd
+  102  docker ps -a
+  103  docker exec -it 105b7f49c84d /bin/bash
+  104  ls
+  105  docker images -a
+  106  docker tag jenkins/jenkins:latest dasivardhani/jenkins:latest
+  107  docker iamges -a
+  108  docker images -a
+  109  docker push dasivardhani/jenkins:latest
+
+  
+Linux:
+
+  
+Dpkg -l   To display the Debian packages list .
+
+yum repolist--> in centos
+
+----------------------------------------------------------------------------------------
+
+1. What is the difference between GIT and SVN?
+GIT is distributed version control Tool, 
+
+2. Advantages of using GIT?
+Speed
+Simplicity
+Fully Distributed
+Excellent support for parallel development, support for hundreds of parallel branches.
+Integrity
+
+3. What is STAGING area and INDEX in GIT?
+ When you run git add , the files from your working directory are hashed and stored as objects in the index, leading them to be “staged changes”
+
+4. What is the difference between GIT PUSH and COMMIT? When they are used?
+git commit saves repository changes on local but not remote repository. Contrarily, Git push then updates your git commit changes and sends it to remote repository.
+
+
+5. What is GIT STASH?
+temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on
+
+6. How do you create a branch in GIT?
+ When you want to start a new feature, you create a new branch off main using git branch new_branch . Once created you can then use git checkout new_branch to switch to that branch
+
+7. How do you merge code from branch to master in GIT?
+To merge branches locally, use git checkout to switch to the branch you want to merge into. This branch is typically the main branch. Next, use git merge and specify the name of the other branch to bring into this branch.
+
+8. How do you confirm if GIT branch has merged into master?
+view the Git logs in the form of a graph by utilizing the “git log –graph” command or “git log –oneline –graph –all” command.
+
+9. What is HEAD in GIT? How many HEADS you can create in GIT?
+While there can be as many heads there are branches, there can be only one HEAD, since you cannot be at multiple places at once. Unless you count git worktree list , which would list multiple working trees attached to the same repository... each with their own HEAD
+
+10. What does "git config" do?
+The git config command is a convenience function that is used to set Git configuration values on a global or local project level. These configuration levels correspond to . gitconfig text files. Executing git config will modify a configuration text file.
+
+11. Learn about all the commands in GIT. Interviewer may ask indirectly about how can u acheive one scenario. You should be able to tell him the command to use.
+12. What is the purpose of branching in GIT? What is the common branching pattern in GIT?  Feature branches, develop branches,release branches, hotfix branches,  Master branches
+13. How can u resolve conflict in GIT? Interviewer may also ask you to explain one scenario how you resolved conflicts in GIT in your current project.
+
+
+Useful Git Commands List
+Command	Description
+git init	Initialize a local Git repository
+git clone repo_url	Clone public repository
+git clone ssh://git@github.com/[username]/[repository-name].git	Clone private repository
+git status	Check status
+git add [file-name]	Add a file to the staging area
+git add -A	Add all new and changed files to the staging area
+git commit -m "[commit message]"	Commit changes
+git rm -r [file-name.txt]	Remove a file (or folder)
+git branch	List of branches (the asterisk denotes the current branch)
+git branch -a	List all branches (local and remote)
+git branch [branch name]	Create a new branch
+git branch -d [branch name]	Delete a branch
+git branch -D [branch name]	Delete a branch forcefully
+git push origin --delete [branch name]	Delete a remote branch
+git checkout -b [branch name]	Create a new branch and switch to it
+git checkout -b [branch name] origin/[branch name]	Clone a remote branch and switch to it
+git branch -m [old branch name] [new branch name]	Rename a local branch
+git checkout [branch name]	Switch to a branch
+git checkout -	Switch to the branch last checked out
+git checkout -- [file-name.txt]	Discard changes to a file
+git merge [branch name]	Merge a branch into the active branch
+git merge [source branch] [target branch]	Merge a branch into a target branch
+git stash	Stash changes in a dirty working directory
+git stash clear	Remove all stashed entries
+git push origin [branch name]	Push a branch to your remote repository
+git push -u origin [branch name]	Push changes to remote repository (and remember the branch)
+git push	Push changes to remote repository (remembered branch)
+git push origin --delete [branch name]	Delete a remote branch
+git pull	Update local repository to the newest commit
+git pull origin [branch name]	Pull changes from remote repository
+git remote add origin ssh://git@github.com/[username]/[repository-name].git	Add a remote repository
+git remote set-url origin ssh://git@github.com/[username]/[repository-name].git	Set a repository's origin branch to SSH
+git log	View changes
+git log --summary	View changes (detailed)
+git log --oneline	View changes (briefly)
+git diff [source branch] [target branch]	Preview changes before merging
+git revert commitid	Revert commit changes
+git config --global user.name "your_username"	Set globally Username
+git config --global user.email "your_email_address@example.com"	Set globally Email id
+git config --global --list	Get global config
+
+
+Access key ID	Secret access key
+AKIAXKKGBFIHB66CXRC7	5EtsQhW6BZFJ3/Dy/KY93YgiOo21OFekZLMYvaho
+
+https://www.jenkins.io/doc/book/pipeline/
+
+Jenkinsfile (Declarative Pipeline)
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                // 
+            }
+        }
+        stage('Test') { 
+            steps {
+                // 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                // 
+            }
+        }
+    }
+}
+
+
+Jenkinsfile (Scripted Pipeline)
+node {  
+    stage('Build') { 
+        // 
+    }
+    stage('Test') { 
+        // 
+    }
+    stage('Deploy') { 
+        // 
+    }
+}
+
+
+
+glpat-cV__QqE_SGvK-_EjPV5H -- GIT lab token
+
+
+ git init
+  175  git add .
+  176  git commit -m "python addition"
+  177  git push origin master
+  178  history
+
+
+
+https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId=i-04ff0bd5b62c437db
+
+http://http://18.212.218.165:8080/project/CI-pipeline-feature
+
+
+
+
+************************************************************************
+
+all containers removing command - for i in $(docker ps -aq); do docker rm  -f $i; done
+all images removing command - for i in $(docker images -aq); do docker rm  -f $i; done
+
+
+
+sample docker file:
+
+pipeline {
+environment {
+registry = "YourDockerhubAccount/YourRepository"
+registryCredential = 'dockerhub_id'
+dockerImage = ''
+}
+agent any
+stages {
+stage('Cloning our Git') {
+steps {
+git 'https://github.com/YourGithubAccount/YourGithubRepository.git'
+}
+}
+stage('Building our image') {
+steps{
+script {
+dockerImage = docker.build registry + ":$BUILD_NUMBER"
+}
+}
+}
+stage('Deploy our image') {
+steps{
+script {
+docker.withRegistry( '', registryCredential ) {
+dockerImage.push()
+}
+}
+}
+}
+stage('Cleaning up') {
+steps{
+sh "docker rmi $registry:$BUILD_NUMBER"
+}
+}
+}
+}
+
+
+
+
+
+
+
+
+
+
