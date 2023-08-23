@@ -1,0 +1,58 @@
+Gova practitces - Docker :
+***************************
+
+docker installation and commands:
+apt update
+   15  apt insatll docker.io
+   16  apt install docker.io
+   17  which docker
+   18  systemctl status docker ----> docker service checking 
+   19  systemctl start docker  ---> docker starting 
+   20  systemctl status docker
+   21  docker info  -->  cross checking the docker is running or not ..  cli 
+   
+   
+   dockerhub is a public registery :
+   #docker run --name c1 -it centos --- download the image 
+   #
+   
+
+brew install package name:
+
+xcode - we need to install mac os
+
+#kubectl get pods -o wide 
+
+
+apt-get remove --purge mongodb
+
+apt remove --purge mongodb
+
+apt-get remove --purge mongodb
+
+sudo service mongod stop
+
+sudo apt-get purge mongodb-org*
+
+sudo rm -r /var/log/mongodb
+
+sudo rm -r /var/lib/mongodb
+
+sudo apt-get install mongodb-org --fix-missing --fix-broken
+sudo apt-get autoremove mongodb-org --fix-missing --fix-broken
+
+*******************************************************************************
+
+kubecnetes practice :
+
+kubectl create deployment name --image=image [--dry-run] [options]
+
+
+
+Username for 'https://github.com': sumojon
+Password for 'https://sumojon @github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+
+
+
+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
